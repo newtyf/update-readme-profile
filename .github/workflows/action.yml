@@ -21,6 +21,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Execute py script
         env:
-          $G_TOKEN: ${{secrets.G_TOKEN}}
+          G_TOKEN: ${{secrets.G_TOKEN}}
         run: python main.py
 
