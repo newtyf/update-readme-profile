@@ -10,7 +10,7 @@ g = Github(os.environ.get("G_TOKEN"))
 user = g.get_user()
 profile_repo = user.get_repo("newtyf")
 last_updated_repo_name = user.get_repos(sort="desc")[0].name
-last_updated_repo_link = user.get_repos(sort="desc")[0].url
+last_updated_repo_link = user.get_repos(sort="desc").__getitem__(0).html_url
 
 def update_readme(match_line: str, replace: str, content: str) -> str:
   split_lines_readme = content.split('\n')
@@ -32,4 +32,4 @@ replace_content = f"- \U0001f52d I\u2019m currently working on [{last_updated_re
 
 readme_content = update_readme(match_line="currently working",replace=replace_content, content=readme_content)
 
-commitReadme(message="Update README", path=file_readme.path, sha=file_readme.sha, content=readme_content)
+# commitReadme(message="Update README", path=file_readme.path, sha=file_readme.sha, content=readme_content)
