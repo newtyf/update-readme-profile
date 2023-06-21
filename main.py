@@ -32,4 +32,4 @@ replace_content = f"- \U0001f52d I\u2019m currently working on [{last_updated_re
 
 readme_content = update_readme(match_line="currently working",replace=replace_content, content=readme_content)
 
-# commitReadme(message="Update README", path=file_readme.path, sha=file_readme.sha, content=readme_content)
+commitReadme(message="Update README", path=file_readme.path, sha=file_readme.sha, content=readme_content)
