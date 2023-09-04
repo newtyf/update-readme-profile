@@ -10,6 +10,10 @@ g = Github(os.environ.get("G_TOKEN"))
 user = g.get_user()
 profile_repo = user.get_repo("newtyf")
 last_updated_repo_name = user.get_repos(sort="pushed")[0].name
+if last_updated_repo_name == "newtyf":
+  last_updated_repo_name = user.get_repos(sort="pushed")[1].name
+  pass
+
 last_updated_repo_link = user.get_repos(sort="pushed").__getitem__(0).html_url
 
 def update_readme(match_line: str, replace: str, content: str) -> str:
