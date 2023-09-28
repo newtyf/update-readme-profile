@@ -15,6 +15,9 @@ if last_updated_repo_name == "newtyf":
   pass
 
 last_updated_repo_link = user.get_repos(sort="pushed").__getitem__(0).html_url
+if last_updated_repo_link == "https://github.com/newtyf/newtyf":
+  last_updated_repo_link = user.get_repos(sort="pushed").__getitem__(1).html_url
+  pass
 
 def update_readme(match_line: str, replace: str, content: str) -> str:
   split_lines_readme = content.split('\n')
